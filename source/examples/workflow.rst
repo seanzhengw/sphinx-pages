@@ -14,3 +14,4 @@ Example Workflow
             id: sphinx-pages
             with:
               github_token: ${{ secrets.GITHUB_TOKEN }}
+              create_readme: true

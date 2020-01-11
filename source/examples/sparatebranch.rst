@@ -25,6 +25,7 @@ To build GitHub Pages from branch ``docs``, add workflow to branch ``docs`` only
                 id: sphinx-pages
                 with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
+                  create_readme: true
 
 #. commit
 #. push ``docs``
