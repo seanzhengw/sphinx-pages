@@ -31,7 +31,7 @@ Setup workflow at branch `master` or `docs` may be a good idea.
 
 There is a repo `mydoc`, it is Sphinx documentation source.
 
-put `example-sphinx.yml` into `mydoc/github/workflows/`
+put `example-sphinx.yml` into `mydoc/.github/workflows/`
 
 ## Example Usage for separate docs to other branch
 
@@ -41,4 +41,8 @@ The program source at branch `master`.
 
 The Sphinx documentation source at branch `docs`.
 
-To build GitHub Pages from branch `docs`, put `example-sphinx.yml` to branch `docs` only at `myproject/github/workflows`.
+To build GitHub Pages from branch `docs`, put `example-sphinx.yml` to branch `docs` only at `myproject/.github/workflows/`.
+
+## Self Example
+
+See [https://seanzhengw.github.io/sphinx-pages](https://seanzhengw.github.io/sphinx-pages/), it from branch [example](https://github.com/seanzhengw/sphinx-pages/tree/example).
