@@ -82,6 +82,14 @@ git config user.email $author_email
 echo "sphinx-build -b html $docs_src/source $docs_html -E -d $sphinx_doctree"
 sphinx-build -b html $docs_src/source $docs_html -E -d $sphinx_doctree
 
+# auto creation of README.md
+if [ "$INPUT_CREATE_README" = true ] ; then
+    echo "Create file README.md"
+    echo "GitHub Pages of [$GITHUB_REPOSITORY](https://github.com/$GITHUB_REPOSITORY.git)" > README.md
+    echo "===" >> README.md
+    echo "Sphinx html documentation of [$docs_sha8](https://github.com/$GITHUB_REPOSITORY/tree/$GITHUB_SHA)" >> README.md
+fi
+
 # commit and push
 echo "git add ."
 git add .

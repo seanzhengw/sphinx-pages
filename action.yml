@@ -8,6 +8,9 @@ inputs:
   github_token:
     description: 'Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}'
     required: true
+  create_readme:
+    description: 'Auto create a README.md file at branch gh-pages root with repo/branch/commit links'
+    default: false
 outputs:
   name:
     description: 'Author name'
