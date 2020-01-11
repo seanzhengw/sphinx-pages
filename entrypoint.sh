@@ -38,12 +38,13 @@ git log -1
 # get author
 author_name="$(git show --format=%an -s)"
 author_email="$(git show --format=%ae -s)"
+docs_sha8="$(echo ${GITHUB_SHA} | cut -c 1-8)"
 
 # outputs
 echo "::set-output name=name::"$author_name""
 echo "::set-output name=email::"$author_email""
 echo "::set-output name=docs_sha::$(echo ${GITHUB_SHA})"
-echo "::set-output name=docs_sha8::$(echo ${GITHUB_SHA} | cut -c 1-8)"
+echo "::set-output name=docs_sha8::"$docs_sha8""
 
 # checkout branch gh-pages
 echo "cd $docs_html"
@@ -85,6 +86,6 @@ sphinx-build -b html $docs_src/source $docs_html -E -d $sphinx_doctree
 echo "git add ."
 git add .
 echo 'git commit --allow-empty -m "From $GITHUB_REF"'
-git commit --allow-empty -m "From $GITHUB_REF"
+git commit --allow-empty -m "From $GITHUB_REF $docs_sha8"
 echo "git push origin gh-pages"
 git push origin gh-pages
