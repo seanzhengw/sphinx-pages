@@ -1,0 +1,22 @@
+name: 'Sphinx Pages'
+description: 'Builds GitHub Pages with Sphinx'
+author: 'Sean Zheng'
+branding:
+  icon: 'book'
+  color: 'purple'
+inputs:
+  github_token:
+    description: 'Token for the repo. Can be passed in using $\{{ secrets.GITHUB_TOKEN }}'
+    required: true
+outputs:
+  name:
+    description: 'Author name'
+  email:
+    description: 'Author email'
+  docs_sha:
+    description: 'Sphinx source sha'
+  docs_sha8:
+    description: 'Sphinx source short sha'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
