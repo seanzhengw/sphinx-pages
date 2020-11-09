@@ -11,6 +11,9 @@ inputs:
   create_readme:
     description: 'Auto create a README.md file at branch gh-pages root with repo/branch/commit links'
     default: false
+  source_dir:
+    description: 'Path to documentation source files that relative to project root'
+    default: '.'
 outputs:
   name:
     description: 'Author name'
