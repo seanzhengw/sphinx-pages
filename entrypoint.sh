@@ -33,7 +33,7 @@ echo ::group::Fetching the repository
 echo "git fetch origin +$GITHUB_SHA:refs/remotes/origin/docs"
 git fetch origin +$GITHUB_SHA:refs/remotes/origin/docs
 echo ::endgroup::
-echo ::group::Checkout ref 
+echo ::group::Checkout ref
 echo "git checkout -B docs refs/remotes/origin/docs"
 git checkout -B docs refs/remotes/origin/docs
 echo ::endgroup::
@@ -66,7 +66,7 @@ echo ::endgroup::
 echo ::group::Check remote branch gh-pages exist
 echo "git ls-remote --heads origin refs/heads/gh-pages"
 gh_pages_exist=$(git ls-remote --heads origin refs/heads/gh-pages)
-if [ -z "$gh_pages_exist" ] 
+if [ -z "$gh_pages_exist" ]
 then
     echo "Not exist."
 else
@@ -74,8 +74,8 @@ else
 fi
 echo ::endgroup::
 
-if [ -z "$gh_pages_exist" ] 
-then 
+if [ -z "$gh_pages_exist" ]
+then
     echo ::group::Create branch gh-pages
     echo "git checkout -B gh-pages"
     git checkout -B gh-pages
