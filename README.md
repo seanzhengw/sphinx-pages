@@ -19,14 +19,14 @@ Setup workflow at branch `master` or `docs` may be a good idea.
     on: [push]
 
     jobs:
-    build:
-      name: Push Sphinx Pages
-      runs-on: ubuntu-latest
-      steps:
-      - uses: seanzhengw/sphinx-pages@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          create_readme: true
+      build:
+        name: Push Sphinx Pages
+        runs-on: ubuntu-latest
+        steps:
+        - uses: seanzhengw/sphinx-pages@master
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            create_readme: true
 
 ## Example Usage for standalone Sphinx documentation
 
