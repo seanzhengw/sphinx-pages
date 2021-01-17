@@ -107,6 +107,10 @@ if [ "$INPUT_INSTALL_EXTENSIONS" = true ] ; then
     echo ::endgroup::
 fi
 
+# execute a script before compiling
+chmod +x $INPUT_SCRIPT_BEFORE
+./$INPUT_SCRIPT_BEFORE
+
 # sphinx-build
 echo ::group::Sphinx build html
 echo "sphinx-build -b html $docs_src/$INPUT_SOURCE_DIR $docs_html -E -d $sphinx_doctree"
