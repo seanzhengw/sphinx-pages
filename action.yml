@@ -17,6 +17,9 @@ inputs:
   install_extensions:
     description: 'Install Sphinx extensions listed in $source_dir/requirements.txt'
     default: true
+  script_before:
+    description: 'Script to execute before compiling the documentation'
+    default: ''
 outputs:
   name:
     description: 'Author name'
