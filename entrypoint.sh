@@ -108,8 +108,10 @@ if [ "$INPUT_INSTALL_EXTENSIONS" = true ] ; then
 fi
 
 # execute a script before compiling
-chmod +x $INPUT_SCRIPT_BEFORE
-./$INPUT_SCRIPT_BEFORE
+if [ -z "$INPUT_CREATE_README" ] ; then
+    chmod +x $INPUT_SCRIPT_BEFORE
+    ./$INPUT_SCRIPT_BEFORE
+fi
 
 # sphinx-build
 echo ::group::Sphinx build html
