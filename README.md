@@ -19,7 +19,7 @@ Setup workflow at branch `master` or `docs` may be a good idea.
 ```yaml
 on:
   push:
-    branches: [master]
+    branches: [master]  # OR: main
 
 
 jobs:
