@@ -16,17 +16,22 @@ Setup workflow at branch `master` or `docs` may be a good idea.
 
 `example-sphinx.yml`
 
-    on: [push]
+```yaml
+on:
+  push:
+    branches: [master]
 
-    jobs:
-      build:
-        name: Push Sphinx Pages
-        runs-on: ubuntu-latest
-        steps:
-        - uses: seanzhengw/sphinx-pages@master
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            create_readme: true
+
+jobs:
+  build:
+    name: Push Sphinx Pages
+    runs-on: ubuntu-latest
+    steps:
+    - uses: seanzhengw/sphinx-pages@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        create_readme: true
+```
 
 ## Example Usage for standalone Sphinx documentation
 
